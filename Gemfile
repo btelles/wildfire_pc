@@ -30,6 +30,8 @@ group :test do
   gem 'fuubar'
   gem 'ruby-debug19'
   gem 'factory_girl_rails', '~> 2.0.0'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development do
