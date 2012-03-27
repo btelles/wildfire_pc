@@ -1,0 +1,19 @@
+%h1 Listing bicycles
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @bicycles.each do |bicycle|
+    %tr
+      %td= bicycle.name
+      %td= link_to 'Show', bicycle
+      %td= link_to 'Edit', edit_bicycle_path(bicycle)
+      %td= link_to 'Destroy', bicycle, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Bicycle', new_bicycle_path
