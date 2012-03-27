@@ -8,6 +8,8 @@ gem 'rails', '3.2.2'
 gem 'sqlite3'
 gem 'haml'
 gem 'haml-rails'
+gem 'decent_exposure'
+gem 'factory_girl'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,6 +28,12 @@ gem 'jquery-rails'
 
 group :test do
   gem 'rspec-rails'
+  gem 'fuubar'
+  gem 'ruby-debug19'
+end
+
+group :development do
+  gem 'ruby-debug19'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
