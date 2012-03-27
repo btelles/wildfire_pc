@@ -9,7 +9,6 @@ gem 'sqlite3'
 gem 'haml'
 gem 'haml-rails'
 gem 'decent_exposure'
-gem 'factory_girl'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,6 +29,7 @@ group :test do
   gem 'rspec-rails'
   gem 'fuubar'
   gem 'ruby-debug19'
+  gem 'factory_girl_rails', '~> 2.0.0'
 end
 
 group :development do
