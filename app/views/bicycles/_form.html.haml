@@ -1,9 +1,9 @@
-= form_for @bicycle do |f|
-  -if @bicycle.errors.any?
+= form_for bicycle do |f|
+  -if bicycle.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@bicycle.errors.count, "error")} prohibited this bicycle from being saved:"
+      %h2= "#{pluralize(bicycle.errors.count, "error")} prohibited this bicycle from being saved:"
       %ul
-        - @bicycle.errors.full_messages.each do |msg|
+        - bicycle.errors.full_messages.each do |msg|
           %li= msg
 
   .field
