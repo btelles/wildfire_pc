@@ -15,6 +15,6 @@ class WheelsController < ApplicationController
 
   def destroy
     wheel.destroy
-    redirect_to bicycles_wheels_url(bicycle)
+    redirect_to bicycle_wheels_url(bicycle)
   end
 end

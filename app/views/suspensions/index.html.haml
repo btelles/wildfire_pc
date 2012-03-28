@@ -1,0 +1,19 @@
+%h1 Listing suspensions
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - suspensions.each do |suspension|
+    %tr
+      %td= suspension.name
+      %td= link_to 'Show', [bicycle, suspension]
+      %td= link_to 'Edit', [:edit, bicycle, suspension]
+      %td= link_to 'Destroy', [bicycle, suspension], :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Wheel', [:new, bicycle, :suspension]
