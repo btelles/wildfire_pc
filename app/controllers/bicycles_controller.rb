@@ -1,12 +1,19 @@
 class BicyclesController < ApplicationController
+
+  respond_to :html, :json
+
   expose :bicycle
   expose(:bicycles) { Bicycle.scoped }
+
+  def index
+    respond_with bicycles
+  end
 
   def create
     if bicycle.save
       redirect_to bicycle, notice: 'Bicycle was successfully saved.'
     else
-      render action: "new"
+      respond_with bicycle
     end
   end
 
