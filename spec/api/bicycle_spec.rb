@@ -28,4 +28,15 @@ describe "Bicycle API", :type => :request do
     post '/bicycles', {:bicycle => {:name => 'my first bike', :wheels_attributes => [{:name => 'my first wheel'}]}}
     Bicycle.first.wheels.first.name.should == 'my first wheel'
   end
+
+  it "can create multiple bicycles in one request" do
+    post '/bicycles', {:bicycles => [{:name => 'my first bike', :wheels_attributes => [{:name => 'my first wheel'}]},
+                                     {:name => 'my second bike', :wheels_attributes => [{:name => 'my second wheel'}]}]}
+    names = Bicycle.all.map(&:name)
+    names.should include('my first bike')
+    names.should include('my second bike')
+    wheels = Bicycle.all.map(&:wheels).flatten.map(&:name)
+    wheels.should include('my first wheel')
+    wheels.should include('my second wheel')
+  end
 end
