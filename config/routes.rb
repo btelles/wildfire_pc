@@ -1,5 +1,7 @@
 WildfirePc::Application.routes.draw do
-  resources :bicycles
+  resources :bicycles do
+    resources :wheels
+  end
 
   root :to => "welcome#index"
 

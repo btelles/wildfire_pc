@@ -1,0 +1,19 @@
+%h1 Listing wheels
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - wheels.each do |wheel|
+    %tr
+      %td= wheel.name
+      %td= link_to 'Show', [bicycle, wheel]
+      %td= link_to 'Edit', [:edit, bicycle, wheel]
+      %td= link_to 'Destroy', [bicycle, wheel], :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Wheel', [:new, bicycle, :wheel]
