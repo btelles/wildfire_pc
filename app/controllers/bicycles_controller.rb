@@ -9,6 +9,10 @@ class BicyclesController < ApplicationController
     respond_with bicycles
   end
 
+  def show
+    respond_with bicycle
+  end
+
   def create
     if params[:bicycle].present?
       if bicycle.save
