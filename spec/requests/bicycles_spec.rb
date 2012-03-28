@@ -7,7 +7,7 @@ describe "Bicycles" do
     it "lists all bicycles" do
       bicycle
       visit bicycles_path
-      page.should have_css 'td', :text => 'First bike'
+      page.should have_css 'td', text: 'First bike'
     end
   end
 
@@ -23,7 +23,7 @@ describe "Bicycles" do
       visit new_bicycle_path
       fill_in('Name', with: 'My first bike')
       click_button 'Save'
-      page.should have_css('#notice', 'Bicycle was successfully saved')
+      page.should have_css('#notice', text: 'Bicycle was successfully saved')
     end
   end
 
@@ -32,9 +32,8 @@ describe "Bicycles" do
       visit edit_bicycle_path(bicycle)
       fill_in('Name', with: 'My second bike')
       click_button 'Save'
-      page.should have_css('#notice', 'Bicycle was successfully saved')
-      page.save_and_open_page
-      page.should have_css('p', :text => 'My second bike')
+      page.should have_css('#notice', text: 'Bicycle was successfully saved')
+      page.should have_css('p', text: 'My second bike')
     end
   end
 
@@ -44,7 +43,7 @@ describe "Bicycles" do
       visit bicycles_path
       page.evaluate_script('window.confirm = function() { return true; }')
       click_link 'Destroy'
-      page.should_not have_css('td', 'My first bike')
+      page.should_not have_css('td', text: 'My first bike')
     end
   end
 end
